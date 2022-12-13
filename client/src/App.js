@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import DataStatus from '../components/DataStatus'
+import DataStatus from "./components/DataStatus"
 
 export default function App() {
   const [data, setData] = useState(null)
@@ -31,8 +31,7 @@ export default function App() {
   return (
     <>
       <div className="App">
-        {loading && <p>Loading...</p>}
-        {!loading && <p>Fetched data</p>}
+        <DataStatus loading={loading} />
         {!loading && <pre>{JSON.stringify(data.data[0], null, 2)}</pre>}
       </div>
     </>
