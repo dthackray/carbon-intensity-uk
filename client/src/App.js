@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
+import DataStatus from '../components/DataStatus'
 
 export default function App() {
   const [data, setData] = useState(null)
