@@ -8,20 +8,6 @@ const cors = require("cors")
 app.use(cors())
 
 const request = import('node-fetch');
- 
-const url = "https://api.carbonintensity.org.uk/intensity"
-const headers = {
-    'Accept':'application/json'
-}
- 
-let response = fetch(url,
-    {
-        method: "GET",
-        headers: headers
-    })
-    .then((res) => res.json())
-    .then((body) => console.log(body)
-)
 
 app.get("/", (req, res) => {
     res.json({ message: "Hello World!" })
