@@ -3,25 +3,24 @@ const express = require("express")
 const PORT = process.env.PORT || 3001
 
 const app = express()
+const cors = require("cors")
+
+app.use(cors())
 
 const request = import('node-fetch');
  
 const url = "https://api.carbonintensity.org.uk/intensity"
 const headers = {
     'Accept':'application/json'
-};
+}
  
-fetch(url,
+let response = fetch(url,
     {
         method: "GET",
         headers: headers
     })
-    .then((res) => {
-        return res.json()
-    })
-    .then((body) => {
-        console.log(body)
-    }
+    .then((res) => res.json())
+    .then((body) => console.log(body)
 )
 
 app.get("/", (req, res) => {
