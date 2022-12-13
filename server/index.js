@@ -7,8 +7,6 @@ const cors = require("cors")
 
 app.use(cors())
 
-const request = import('node-fetch');
-
 app.get("/", (req, res) => {
     res.json({ message: "Hello World!" })
 })
