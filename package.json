@@ -1,0 +1,25 @@
+{
+  "name": "carbon-intensity-uk",
+  "version": "1.0.0",
+  "description": "A project using the National Grid Carbon Intensity API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dthackray/carbon-intensity-uk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dthackray/carbon-intensity-uk/issues"
+  },
+  "homepage": "https://github.com/dthackray/carbon-intensity-uk#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
