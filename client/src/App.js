@@ -1,39 +1,12 @@
-import { useState, useEffect } from 'react'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
 import DataStatus from "./components/DataStatus"
+const queryClient = new QueryClient()
 
 export default function App() {
-  const [data, setData] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-
-  const url = "https://api.carbonintensity.org.uk/intensity"
-  const headers = {
-      'Accept':'application/json'
-  }
-
-  useEffect(() => {
-    fetch(url,
-      {
-          method: "GET",
-          headers: headers
-      })
-      .then((res) => res.json())
-      .then((usefulData) => {
-        console.log(usefulData)
-        setLoading(false)
-        setData(usefulData)
-      })
-      .catch((e) => {
-        console.error(`An error occurred: ${e}`)
-      })
-  }, [])
-
   return (
-    <>
-      <div className="App">
-        <DataStatus loading={loading} />
-        {!loading && <pre>{JSON.stringify(data.data[0], null, 2)}</pre>}
-      </div>
-    </>
+      <QueryClientProvider client={queryClient}>
+        <DataStatus />
+      </QueryClientProvider>
   )
 }
