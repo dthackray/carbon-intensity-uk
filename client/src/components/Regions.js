@@ -1,7 +1,6 @@
 import React from 'react'
-import DateAndTime from './DateAndTime'
 
-const Data = (data) => {
+const Regions = (data) => {
   const usefulData = data.data.data[0]
   const regions = usefulData.regions
 
@@ -12,11 +11,10 @@ const Data = (data) => {
   }
 
   return (
-    <div>
-      <DateAndTime from={usefulData.from} to={usefulData.to} />
-      {/* <pre>{JSON.stringify(shortNames, null, 2)}</pre> */}
-    </div>
+    <ul>
+      {shortNames.map((region) => <li>{region}</li>)}
+    </ul>
   )
 }
 
-export default Data
+export default Regions

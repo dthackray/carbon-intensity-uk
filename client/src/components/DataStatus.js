@@ -1,6 +1,7 @@
 import React from 'react'
 import { useQuery } from 'react-query'
 import Data from './Data'
+import Regions from './Regions'
 
 const DataStatus = () => {
   const url = "https://api.carbonintensity.org.uk/regional"
@@ -25,6 +26,7 @@ const DataStatus = () => {
         {isLoading && <p>Loading...</p>}
         {!isLoading && <p>Fetched data</p>}
         {!isLoading && <Data data={data} />}
+        {!isLoading && <Regions data={data} />}
     </div>
   )
 }
