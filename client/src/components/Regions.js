@@ -12,7 +12,7 @@ const Regions = (data) => {
 
   return (
     <ul>
-      {shortNames.map((region) => <li>{region}</li>)}
+      {shortNames.map((region) => <li key={region}>{region}</li>)}
     </ul>
   )
 }
